@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:45:21 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/09 17:00:26 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:32:20 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,19 @@ class Array
 		Array(const Array &src);
 		Array &operator=(Array const &src);
 		~Array(void);
+
+		// getters
+		unsigned int getSize() const;
+
+		// overload operator
+		T &operator[](unsigned int index);
+
+		// Exception
+		class InvalidIndexException : public std::exception
+		{
+			public:
+				virtual const char	*what() const throw();
+		}
 
 };
 
