@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:45:21 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/03/11 11:08:11 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/03/11 16:42:29 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Array
 
 		// overload operator
 		T &operator[](unsigned int index);
+		const T &operator[](unsigned int index) const;
 
 		// Exception
 		class InvalidIndexException : public std::exception
@@ -116,6 +117,17 @@ Array<T> &Array<T>::operator=(Array const &src)
 			array = NULL;
 	}
 	return *this;
+}
+
+// read only
+template <typename T>
+const T &Array<T>::operator[](unsigned int index) const
+{
+	if (array == NULL || index >= size)
+	{
+		throw (InvalidIndexException());
+	}
+	return (array[index]);
 }
 
 /**

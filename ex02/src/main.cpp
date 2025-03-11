@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:45:52 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/03/11 11:32:25 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/03/11 16:57:23 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 			std::cout << "array1[" << i << "]:\t" << array1[i] << std::endl;
 		for (int i = 0; i < 5; i++)
 			std::cout << "a[" << i << "]:\t" << a[i] << std::endl;
-		
+
 		std::cout << std::endl;
 		std::cout << "Accessing out of index operator" << std::endl;
 		try
@@ -59,7 +59,7 @@ int main()
 	{
 		std::cout << "Test copy operator" << std::endl;
 		Array<std::string> array1(5);
-		
+
 		for (int i = 0; i < 5; i++)
 		{
 			std::ostringstream oss;
@@ -110,5 +110,23 @@ int main()
 		std::cout << "Test getsize\n";
 		std::cout << "Size of array1: " << array1.getSize() << std::endl;
 	}
+	std::cout << std::endl;
+	std::cout << "------------------------" << std::endl;
+	std::cout << std::endl;
+	{
+		// Test to show read only subscript operator
+		const Array<std::string> array1(3);
+		std::cout << "array1[0]: " << array1[0] << std::endl;
+		std::cout << "array1[1]: " << array1[1] << std::endl;
+		std::cout << "array1[2]: " << array1[2] << std::endl;
 
+		// modify value will fail if const Array
+		//array1[0] = "Hello";
+
+		// write subscript operator
+		Array<std::string> array2(1);
+		array2[0] = "Hello";
+		std::cout << "array2[0]: " << array2[0] << std::endl;
+	}
+	return (0);
 }
