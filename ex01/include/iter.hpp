@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:46:30 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/09 15:06:48 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/03/11 10:48:55 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 #define ITER_HPP
 
 #include <iostream>
+
+void	printElement(int elem)
+{
+	std::cout << elem << " ";
+}
+
+void	convertUppercase(char &arr)
+{
+	arr = std::toupper(static_cast<unsigned char>(arr));
+	std::cout << arr << " ";
+}
 
 template <typename T,typename Func>
 

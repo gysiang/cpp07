@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
+/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:45:21 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/22 13:12:15 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/03/11 11:08:11 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,16 @@ class Array
 		class InvalidIndexException : public std::exception
 		{
 			public:
-				virtual const char	*what() const throw();
+				virtual const char *what() const throw() {
+					return ("Index out of bounds!");
+				}
 		};
 
 };
+
+/**
+  Construction with no parameter: Creates an empty array.
+*/
 
 template <typename T>
 Array<T>::Array() : array(NULL), size(0)
@@ -144,11 +150,12 @@ unsigned int Array<T>::getSize() const
 	return (size);
 }
 
+/** *
 template <typename T>
 const char *Array<T>::InvalidIndexException::what() const throw()
 {
 	return ("Error: Index out of range.\n");
-}
+} **/
 
 
 #endif
