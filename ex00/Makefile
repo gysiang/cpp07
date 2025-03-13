@@ -27,7 +27,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ_DIR)/*.o
+	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/*.d
 
 fclean: clean
 	rm -f $(TARGET)
