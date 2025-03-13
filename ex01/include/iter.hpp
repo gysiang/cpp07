@@ -15,17 +15,6 @@
 
 #include <iostream>
 
-void	printElement(int elem)
-{
-	std::cout << elem << " ";
-}
-
-void	convertUppercase(char &arr)
-{
-	arr = std::toupper(static_cast<unsigned char>(arr));
-	std::cout << arr << " ";
-}
-
 template <typename T,typename Func>
 
 /**
