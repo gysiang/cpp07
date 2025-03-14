@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 13:18:31 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/03/11 10:42:45 by gyong-si         ###   ########.fr       */
+/*   Created: 2025/03/14 13:02:04 by gyong-si          #+#    #+#             */
+/*   Updated: 2025/03/14 13:02:05 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 #include <iostream>
 

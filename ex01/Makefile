@@ -15,6 +15,9 @@ SRCS_PATH = $(addprefix $(SRC_DIR)/, $(SRCS))
 # Generate object file names
 OBJS = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRCS))
 
+# Dependency files
+DEPS = $(OBJS:.o=.d)
+
 all: $(OBJ_DIR) $(TARGET)
 
 $(OBJ_DIR):
@@ -25,9 +28,12 @@ $(TARGET): $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
+	
+# Include dependency files if they exist
+-include $(DEPS)
 
 clean:
-	rm -f $(OBJ_DIR)/*.o $(OBJ_DIR)/*.d
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(TARGET)
